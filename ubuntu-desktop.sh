@@ -38,6 +38,9 @@ sudo apt-get -y install virtualbox-ose tasque liferea artha cryptsetup localepur
 # Vim
 sudo apt-get -y install vim-gnome vim-doc
 
+# Remove un needed packages
+sudo apt-get -y purge gnome-sudoku gnome-mahjongg gnomine quadrapassel aisleriot gbrainy computer-janitor rhythmbox vino ubuntuone-client
+
 # Wait for dropbox
 echo -n "Once Dropbox is synced hit [ENTER]: "
 read -n 0 dropbox_done
