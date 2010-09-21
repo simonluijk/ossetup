@@ -8,7 +8,7 @@ cd ~ && wget http://dl-web.dropbox.com/u/17/dropbox-lnx.x86-0.8.105.tar.gz && ki
 dropbox start
 
 # Plugins
-sudo apt-get -y install gstreamer0.10-ffmpeg gedit-plugins
+sudo apt-get -y install gstreamer0.10-ffmpeg mozilla-plugin-gnash gedit-plugins
 
 # DVCS and svn
 sudo apt-get -y install git-gui git-doc git-svn mercurial subversion
