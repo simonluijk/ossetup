@@ -3,6 +3,38 @@
 sudo apt-get update
 sudo apt-get dist-upgrade
 
+# Setup firewall
+function interface_ip4 {
+    ifconfig $1 | grep inet | grep -v inet6 | cut -d ":" -f 2 | cut -d " " -f 1
+}
+EXTERNAL_IP=`interface_ip4 eth0`
+
+# Clear all rules
+iptables -F
+
+# Allow all outgoing traffic
+iptables -A OUTPUT -j ACCEPT
+
+# Allows all loopback (lo0) and drop all to 127/8 not using lo0
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
+
+# Accepts all established inbound connections
+iptables -A INPUT -i eth0 -m state --state ESTABLISHED,RELATED -d $EXTERNAL_IP -j ACCEPT
+
+# Allow ping
+iptables -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+
+# Reject all other inbound
+iptables -A INPUT -j REJECT
+iptables -A FORWARD -j REJECT
+
+iptables-save > /etc/iptables.up.rules
+
+echo '#!/usr/bin/env bash' > /etc/network/if-pre-up.d/iptables
+echo '/sbin/iptables-restore < /etc/iptables.up.rules' >> /etc/network/if-pre-up.d/iptables
+chmod +x /etc/network/if-pre-up.d/iptables
+
 # Dropbox
 cd ~ && wget http://dl-web.dropbox.com/u/17/dropbox-lnx.x86-0.8.107.tar.gz && killall dropbox; rm -rf .dropbox-dist/ && tar xzf dropbox* && rm dropbox*
 dropbox start
