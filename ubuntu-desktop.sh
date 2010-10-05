@@ -38,7 +38,7 @@ sudo apt-get -y install virtualbox-ose tasque liferea artha cryptsetup localepur
 # Vim
 sudo apt-get -y install vim-gnome vim-doc
 
-# Remove un needed packages
+# Remove un-needed packages
 sudo apt-get -y purge gnome-sudoku gnome-mahjongg gnomine quadrapassel aisleriot gbrainy computer-janitor rhythmbox vino ubuntuone-client
 
 # Cleanup
