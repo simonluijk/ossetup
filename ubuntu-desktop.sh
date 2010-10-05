@@ -4,7 +4,7 @@ sudo apt-get update
 sudo apt-get dist-upgrade
 
 # Dropbox
-cd ~ && wget http://dl-web.dropbox.com/u/17/dropbox-lnx.x86-0.8.105.tar.gz && killall dropbox; rm -rf .dropbox-dist/ && tar xzf dropbox* && rm dropbox*
+cd ~ && wget http://dl-web.dropbox.com/u/17/dropbox-lnx.x86-0.8.107.tar.gz && killall dropbox; rm -rf .dropbox-dist/ && tar xzf dropbox* && rm dropbox*
 dropbox start
 
 # Plugins
