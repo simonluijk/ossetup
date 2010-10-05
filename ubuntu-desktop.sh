@@ -65,7 +65,7 @@ sudo apt-get -y install python-virtualenv python-pip fabric
 sudo apt-get -y install python-reportlab python-beautifulsoup python-libcloud
 
 # Utilities
-sudo apt-get -y install virtualbox-ose tasque liferea artha cryptsetup localepurge
+sudo apt-get -y install virtualbox-ose tasque liferea artha cryptsetup
 
 # Vim
 sudo apt-get -y install vim-gnome vim-doc
