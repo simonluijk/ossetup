@@ -87,3 +87,7 @@ $HOME/Dropbox/Dotfiles/symlink.py
 
 chmod +x $HOME/Dropbox/Dotfiles-Private/symlink.py
 $HOME/Dropbox/Dotfiles-Private/symlink.py
+
+# Link Hamster data
+mkdir -p ~/.local/share/hamster-applet
+ln -s ~/Dropbox/Data/Hamster/hamster.db ~/.local/share/hamster-applet/hamster.db
