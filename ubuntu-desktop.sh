@@ -84,3 +84,6 @@ read -n 0 dropbox_done
 # Link dotfiles
 chmod +x $HOME/Dropbox/Dotfiles/symlink.py
 $HOME/Dropbox/Dotfiles/symlink.py
+
+chmod +x $HOME/Dropbox/Dotfiles-Private/symlink.py
+$HOME/Dropbox/Dotfiles-Private/symlink.py
