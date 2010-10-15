@@ -65,7 +65,7 @@ sudo apt-get -y install python-virtualenv python-pip fabric
 sudo apt-get -y install python-reportlab python-beautifulsoup python-libcloud
 
 # Utilities
-sudo apt-get -y install virtualbox-ose tasque liferea artha cryptsetup sqlite3 sqlite3-doc conduit istanbul contacts keepass hamster-applet
+sudo apt-get -y install virtualbox-ose tasque liferea artha cryptsetup sqlite3 sqlite3-doc conduit istanbul contacts keepass hamster-applet getmail4
 
 # Vim
 sudo apt-get -y install vim-gnome vim-doc
