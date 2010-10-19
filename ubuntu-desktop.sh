@@ -7,7 +7,7 @@ sudo apt-get dist-upgrade
 function interface_ip4 {
     ifconfig $1 | grep inet | grep -v inet6 | cut -d ":" -f 2 | cut -d " " -f 1
 }
-EXTERNAL_IP=`interface_ip4 eth0`
+EXTERNAL_IP=`interface_ip4 wlan1`
 
 # Clear all rules
 iptables -F
