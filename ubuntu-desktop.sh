@@ -20,7 +20,7 @@ iptables -A INPUT -i lo -j ACCEPT
 iptables -A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
 
 # Accepts all established inbound connections
-iptables -A INPUT -i eth0 -m state --state ESTABLISHED,RELATED -d $EXTERNAL_IP -j ACCEPT
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -d $EXTERNAL_IP -j ACCEPT
 
 # Allow ping
 iptables -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
