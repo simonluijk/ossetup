@@ -91,3 +91,6 @@ $HOME/Dropbox/Dotfiles-Private/symlink.py
 # Link Hamster data
 mkdir -p ~/.local/share/hamster-applet
 ln -s ~/Dropbox/Data/Hamster/hamster.db ~/.local/share/hamster-applet/hamster.db
+
+# Tidy up
+rm ~/examples.desktop
