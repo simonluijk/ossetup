@@ -94,3 +94,6 @@ ln -s ~/Dropbox/Data/Hamster/hamster.db ~/.local/share/hamster-applet/hamster.db
 
 # Tidy up
 rm ~/examples.desktop
+
+chmod 0700 ~/.ssh
+chmod 0600 ~/.ssh/*
