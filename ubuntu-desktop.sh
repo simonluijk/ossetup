@@ -36,7 +36,7 @@ sudo sh -c 'echo "/sbin/iptables-restore < /etc/iptables.up.rules" >> /etc/netwo
 sudo chmod +x /etc/network/if-pre-up.d/iptables
 
 # Plugins
-sudo apt-get -y install gstreamer0.10-ffmpeg mozilla-plugin-gnash gedit-plugins
+sudo apt-get -y install gstreamer0.10-ffmpeg gedit-plugins
 
 # DVCS and svn
 sudo apt-get -y install git-gui git-doc git-svn mercurial subversion
