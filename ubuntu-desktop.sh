@@ -3,12 +3,6 @@
 sudo apt-get update
 sudo apt-get dist-upgrade
 
-# Setup firewall
-function interface_ip4 {
-    ifconfig $1 | grep inet | grep -v inet6 | cut -d ":" -f 2 | cut -d " " -f 1
-}
-EXTERNAL_IP=`interface_ip4 wlan0`
-
 # Clear all rules
 sudo iptables -F
 
@@ -20,7 +14,8 @@ sudo iptables -A INPUT -i lo -j ACCEPT
 sudo iptables -A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
 
 # Accepts all established inbound connections
-sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -d $EXTERNAL_IP -j ACCEPT
+sudo iptables -A INPUT -i eth0 -d 192.168.0.0/16 -m state --state ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A INPUT -i eth1 -d 192.168.0.0/16 -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 # Allow ping
 sudo iptables -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
